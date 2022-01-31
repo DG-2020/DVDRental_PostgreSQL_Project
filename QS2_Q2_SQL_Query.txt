@@ -1,0 +1,16 @@
+WITH t1 AS
+  (SELECT cu.customer_id, sum(p.amount) AS pay_amt
+   FROM payment AS p
+   JOIN customer AS cu ON cu.customer_id = p.customer_id
+   WHERE date_part('year', payment_date) = 2007
+   GROUP BY 1
+   ORDER BY 2 DESC
+   LIMIT 10)
+SELECT date_trunc('month', payment_date) as pay_month, cu.first_name || ' ' || cu.last_name as full_name,
+COUNT(*) AS count_per_month,
+SUM(p.amount) AS pay_amt
+   FROM t1
+   JOIN payment AS p ON t1.customer_id = p.customer_id
+   JOIN customer AS cu ON cu.customer_id = p.customer_id
+GROUP BY 1,2
+ORDER BY 2;
