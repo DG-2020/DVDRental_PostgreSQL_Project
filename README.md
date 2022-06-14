@@ -1,8 +1,9 @@
-**DVDRental_PostgreSQL_Project**
+_**DVDRental_PostgreSQL_Project**_
 
-Investigate a Relational Database: Sakila Movie Database
+**Investigate a Relational Database: Sakila Movie Database - a fictional database that represents the business process of a DVD rental store.**
 
-*The DVD rental database represents the business processes of a DVD rental store. The DVD rental database has many objects, including:
+**It represents the business processes of a DVD rental store. The DVD rental database has many objects, including:**
+
 - 15 tables
 - 1 trigger
 - 7 views
